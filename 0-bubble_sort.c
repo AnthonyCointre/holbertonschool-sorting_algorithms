@@ -10,17 +10,17 @@ void bubble_sort(int *array, size_t size)
 {
 	int temp;
 
-	size_t i, j;
+	size_t outer_index, inner_index;
 
-	for (i = 0; i < size - 1; ++i)
+	for (outer_index = 0; outer_index < size - 1; ++outer_index)
 	{
-		for (j = 0; j < size - i - 1; ++j)
+		for (inner_index = 0; inner_index < size - outer_index - 1; ++inner_index)
 		{
-			if (array[j] > array[j + 1])
+			if (array[inner_index] > array[inner_index + 1])
 			{
-				temp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = temp;
+				temp = array[inner_index];
+				array[inner_index] = array[inner_index + 1];
+				array[inner_index + 1] = temp;
 
 				print_array(array, size);
 			}
